@@ -1,0 +1,6 @@
+node_modules/
+dist/
+commit.txt
+.env
+tmp*
+*~
