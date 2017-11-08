@@ -1,5 +1,19 @@
-const logToConsole = (msg) => {
-  console.log(msg);
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const App = (props) => {
+  return (
+    <div>
+      <h1>Hello World</h1>
+    </div>    
+  );
 }
 
-logToConsole("Hi!");
+const render = () => {
+  ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+  )
+}
+
+render();
