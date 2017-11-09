@@ -9,6 +9,7 @@ const listUser = (username) => (
 
 class CreateList extends React.Component {
   render() {
+    console.log('>>>+', this.props);
     const usersList = this.props.usernames.map((username) => listUser(username));
     return (
       <div>
