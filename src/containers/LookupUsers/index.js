@@ -20,7 +20,7 @@ class LookupUsers extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    usernames: state.get('usernames'),
+    usernames: state.toLookup.get('usernames'),
   }
 }
 

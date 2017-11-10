@@ -25,8 +25,8 @@ class CreateList extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    usernames: state.get('usernames'),
-    currentUsername: state.get('currentUsername'),
+    usernames: state.toLookup.get('usernames'),
+    currentUsername: state.toLookup.get('currentUsername'),
   }
 }
 

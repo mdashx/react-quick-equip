@@ -4,11 +4,11 @@ import { Provider } from 'react-redux'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import { initialState, rootReducer } from 'reducer';
+import reducer from 'reducers';
 
 import App from 'containers/App';
 
-const store = createStore(rootReducer);
+const store = createStore(reducer);
 
 const render = () => {
   ReactDOM.render(

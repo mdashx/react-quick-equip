@@ -12,13 +12,13 @@ class SearchHistory extends React.Component {
           <UserList usernames={this.props.history} clickHandler={this.props.createComment} />
         </ul>
       </div>
-    )
+    );
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    history: state.get('history'),
+    history: state.lookedUp.get('history'),
   }
 }
 
