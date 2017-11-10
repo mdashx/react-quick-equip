@@ -2,7 +2,7 @@ import {
   ADD_USER_TO_LIST,
   UPDATE_USERNAME,
   DNE,
-} from 'appConstants';
+} from './constants';
 
 export function updateUsername(username) {
   return {

@@ -1,16 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { addUser, updateUsername } from 'actions';
-
-const listUser = (username) => (
-  <li key={`listuser-${username}`}>{username}</li>
-)
+import { addUser, updateUsername } from './actions';
+import ListUser from 'components/ListUser';
 
 class CreateList extends React.Component {
+  getUserList() {
+    return this.props.usernames.map((username) => {
+      return <ListUser username={username} key={`listuser-${username}`} />
+    });
+  }
+  
   render() {
-    console.log('>>>+', this.props);
-    const usersList = this.props.usernames.map((username) => listUser(username));
+    const usersList = this.getUserList();
     return (
       <div>
         <h1>What Github user's do you want to lookup?</h1>
@@ -23,15 +25,15 @@ class CreateList extends React.Component {
         <ul>
           {usersList}
         </ul>
-      </div>    
-    );  
+      </div>
+    );
   }
-}
+};
 
 const mapStateToProps = (state) => {
   return {
-    usernames: state.usernames,
-    currentUsername: state.currentUsername,
+    usernames: state.get('usernames'),
+    currentUsername: state.get('currentUsername'),
   }
 }
 
@@ -40,6 +42,6 @@ const mapDispatchToProps = (dispatch) => {
     updateUsername: (e) => dispatch(updateUsername(e.target.value)),
     addUser: (e) => {e.preventDefault(); dispatch(addUser())},
   }
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateList);

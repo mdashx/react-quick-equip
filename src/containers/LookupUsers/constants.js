@@ -1,0 +1,1 @@
+export const LOOKUP_USERNAME = 'app/LOOKUP_USERNAME'
