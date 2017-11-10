@@ -1,5 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+
+import { makeSelectUsernames, makeSelectCurrentUsername } from 'selectors/toLookup';
 
 import { addUser, updateUsername } from './actions';
 import UserList from 'components/UserList';
@@ -23,12 +26,17 @@ class CreateList extends React.Component {
   }
 };
 
-const mapStateToProps = (state) => {
-  return {
-    usernames: state.toLookup.get('usernames'),
-    currentUsername: state.toLookup.get('currentUsername'),
-  }
-}
+const mapStateToProps = createStructuredSelector({
+  usernames: makeSelectUsernames(),
+  currentUsername: makeSelectCurrentUsername(),
+});
+
+/* (state) => {
+ * return {
+ *   usernames: makeSelectUsernames(state),
+ *   currentUsername: makeSelectCurrentUsername(state),
+ * }
+   }*/
 
 const mapDispatchToProps = (dispatch) => {
   return {

@@ -1,5 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+
+import { makeSelectHistory } from 'selectors/lookedUp';
 
 import UserList from 'components/UserList';
 
@@ -16,11 +19,9 @@ class SearchHistory extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    history: state.lookedUp.get('history'),
-  }
-}
+const mapStateToProps = createStructuredSelector({
+  history: makeSelectHistory(),
+});
 
 const mapDispatchToProps = (dispatch) => {
   return {

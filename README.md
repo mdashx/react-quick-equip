@@ -2,6 +2,8 @@
 Yet another ReactJS starter kit. Built for my specific use cases,
 based on many hours of experience building with react-boilerplate.
 
+## Coding Conventions
+
 ### Adding Data Attributes Vs Binding Click Handlers
 Instead of creating a `data-username` attribute on the ListUser `<li>`
 element, we could just bind the username value we want, like this:
@@ -19,7 +21,7 @@ not be changed. Without an immutable library, we'd need to use
 handles making these copies in a more performant way then we would do
 naively with just `Object.assign()`.
 
-# Differences from react-boilerplate
+## Differences from react-boilerplate
 
 One thing I don't like so much about react-boilerplate is that the
 default setup is to have all slices of the Redux state correspond to

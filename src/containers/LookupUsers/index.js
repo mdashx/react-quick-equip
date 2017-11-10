@@ -1,5 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+
+import { makeSelectUsernames } from 'selectors/toLookup';
 
 import { lookupUsername } from './actions';
 import UserList from 'components/UserList';
@@ -18,11 +21,9 @@ class LookupUsers extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    usernames: state.toLookup.get('usernames'),
-  }
-}
+const mapStateToProps = createStructuredSelector({
+  usernames: makeSelectUsernames(),
+});
 
 const mapDispatchToProps = (dispatch) => {
   return {
