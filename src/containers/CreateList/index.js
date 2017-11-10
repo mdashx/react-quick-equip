@@ -2,17 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { addUser, updateUsername } from './actions';
-import ListUser from 'components/ListUser';
+import UserList from 'components/UserList';
 
 class CreateList extends React.Component {
-  getUserList() {
-    return this.props.usernames.map((username) => {
-      return <ListUser username={username} key={`listuser-${username}`} />
-    });
-  }
-  
   render() {
-    const usersList = this.getUserList();
     return (
       <div>
         <h1>What Github user's do you want to lookup?</h1>
@@ -23,7 +16,7 @@ class CreateList extends React.Component {
         </form>
         <br />
         <ul>
-          {usersList}
+          <UserList usernames={this.props.usernames} clickHandler={this.props.removeUser} />
         </ul>
       </div>
     );
@@ -41,6 +34,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     updateUsername: (e) => dispatch(updateUsername(e.target.value)),
     addUser: (e) => {e.preventDefault(); dispatch(addUser())},
+    removeUser:(e) => { console.log(`Remove user: ${e.target.getAttribute('data-username')}`)}
   }
 };
 
