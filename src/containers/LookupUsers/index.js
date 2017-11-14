@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import { makeSelectUsernames } from 'selectors/toLookup';
-
-import { lookupUsername } from './actions';
+import { makeSelectUsernames } from 'features/findUser/selectors';
+import { makeMostRecentUser } from 'features/foundUser/selectors';
+import { lookupUsername } from 'features/foundUser/actions';
 import UserList from 'components/UserList';
 
 class LookupUsers extends React.Component {
@@ -23,6 +23,7 @@ class LookupUsers extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   usernames: makeSelectUsernames(),
+  mostRecent: makeMostRecentUser(),
 });
 
 const mapDispatchToProps = (dispatch) => {

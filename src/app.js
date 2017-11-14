@@ -8,13 +8,13 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import createSagaMiddleware from 'redux-saga';
 
 import reducer from 'reducers';
-import { lookupUserWatcher } from 'sagas/lookupUser';
+import { foundUserWatcher } from 'features/foundUser/sagas';
 
 import App from 'containers/App';
 
 const sagaMiddleware = createSagaMiddleware();
-const store = createStore(reducer, applyMiddleware(sagaMiddleware));
-sagaMiddleware.run(lookupUserWatcher);
+export const store = createStore(reducer, applyMiddleware(sagaMiddleware));
+sagaMiddleware.run(foundUserWatcher);
 
 const render = () => {
   ReactDOM.render(

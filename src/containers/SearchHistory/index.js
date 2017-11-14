@@ -2,9 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import { makeSelectHistory } from 'selectors/lookedUp';
-
 import UserList from 'components/UserList';
+import { makeSelectHistory } from 'features/foundUser/selectors';
 
 class SearchHistory extends React.Component {
   render() {

@@ -2,10 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import { makeSelectUsernames, makeSelectCurrentUsername } from 'selectors/toLookup';
-
-import { addUser, updateUsername } from './actions';
 import UserList from 'components/UserList';
+import { addUser, updateUsername } from 'features/findUser/actions';
+import { makeSelectUsernames, makeSelectCurrentUsername } from 'features/findUser/selectors';
 
 class CreateList extends React.Component {
   render() {

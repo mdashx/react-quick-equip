@@ -23,9 +23,8 @@ naively with just `Object.assign()`.
 
 ## Differences from react-boilerplate
 
-One thing I don't like so much about react-boilerplate is that the
-default setup is to have all slices of the Redux state correspond to
-pages in the app. This can be worked around, but I'd rather organize
-state from the start based on how the data fits conceptually into the
-app, and not based on where the user is most likely to see that data.
+This starter kit uses a feature oriented directory structure, but the
+containers and components remain separate from the Redux features.
 
+There are no plans to inject reducers and sagas dynamically... if that
+happens at all, it will not be the default behavior.
