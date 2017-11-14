@@ -17,7 +17,7 @@ class CreateList extends React.Component {
           <span>&nbsp;</span>
           <input type="submit" value="Add User" onClick={this.props.addUser} />
         </form>
-        <br />
+        <p>Click a username to delete it from the list.</p>
         <ul>
           <UserList usernames={this.props.usernames} clickHandler={this.props.removeUser} />
         </ul>
@@ -30,13 +30,6 @@ const mapStateToProps = createStructuredSelector({
   usernames: makeSelectUsernames(),
   currentUsername: makeSelectCurrentUsername(),
 });
-
-/* (state) => {
- * return {
- *   usernames: makeSelectUsernames(state),
- *   currentUsername: makeSelectCurrentUsername(state),
- * }
-   }*/
 
 const mapDispatchToProps = (dispatch) => {
   return {

@@ -18,7 +18,11 @@ const toLookup = (state = initialState, action) => {
         map.set('currentUsername', '');
       });
     case LOOKUP_USERNAME:
-      return state.updateIn(['usernames'], list => list.filter(username => username !== action.username))
+      return state.withMutations(map => {
+        map.updateIn(['usernames'], list => list.filter(username => username !== action.username));
+        map.set('currentUsername', action.username);
+      });
+      
     default:
       return state;
   }
