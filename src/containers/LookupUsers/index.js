@@ -2,20 +2,25 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
+import ShowUserList from 'components/ShowUserList';
+import ShowRepos from 'components/ShowRepos';
 import { makeSelectUsernames } from 'features/findUser/selectors';
-import { makeMostRecentUser } from 'features/foundUser/selectors';
+import { makeMostRecentRepos, makeMostRecentUser } from 'features/foundUser/selectors';
 import { lookupUsername } from 'features/foundUser/actions';
-import UserList from 'components/UserList';
+
 
 class LookupUsers extends React.Component {
   render() {
+    console.log(this.props);
     return (
       <div>
-        <h1>Lookup users</h1>
-        <br />
-        <ul>
-          <UserList usernames={this.props.usernames} clickHandler={this.props.lookupUsername} />
-        </ul>
+        <ShowUserList
+            title="Lookup Users"
+            usernames={this.props.usernames}
+            clickHandler={this.props.lookupUsername}
+        />
+        <hr />
+        <ShowRepos repos={this.props.mostRecentRepos} />
       </div>
     );
   }
@@ -23,7 +28,8 @@ class LookupUsers extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   usernames: makeSelectUsernames(),
-  mostRecent: makeMostRecentUser(),
+  mostRecentRepos: makeMostRecentRepos(),
+  mostRecentUser: makeMostRecentUser(),
 });
 
 const mapDispatchToProps = (dispatch) => {

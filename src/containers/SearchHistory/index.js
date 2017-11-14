@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import UserList from 'components/UserList';
+import ShowUserList from 'components/ShowUserList';
 import { makeFoundRepos, makeSelectHistory } from 'features/foundUser/selectors';
 
 class SearchHistory extends React.Component {
@@ -10,10 +10,11 @@ class SearchHistory extends React.Component {
     console.log(this.props);
     return (
       <div>
-        <h1>Search History</h1>
-        <ul>
-          <UserList usernames={this.props.history} clickHandler={this.props.createComment} />
-        </ul>
+        <ShowUserList
+            title="Search History"
+            usernames={this.props.usernames}
+            clickHandler={this.props.lookupUsername}
+        />
       </div>
     );
   }
