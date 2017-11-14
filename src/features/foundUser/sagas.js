@@ -1,24 +1,21 @@
 import { call, put, select, takeLatest } from 'redux-saga/effects';
 
 import { fetchGithubUser } from 'clients/github';
-import { makeMostRecentUser } from './selectors';
+
+import { updateUsernameRepos } from './actions';
 import { LOOKUP_USERNAME } from './constants';
+import { makeMostRecentUser } from './selectors';
 
 import { store } from 'app';
 
 function* foundUserSaga() {
   const username = yield select(makeMostRecentUser());
-  console.log(username);
-  const state = store.getState();
-  console.log(state);
-  console.log(state.foundUser.toJS());
-
   try {
     const response = yield call(fetchGithubUser, username);
-    console.log(response.data);
+    yield put(updateUsernameRepos(username, response.data));
   } catch (err) {
     if (err.response) {
-      console.log(err.response);
+      yield put(updateUsernameRepos(username, `Lookup failed: ${err.response}`));
     } else {
       console.log(err);
     }

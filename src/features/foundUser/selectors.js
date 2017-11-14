@@ -11,3 +11,8 @@ export const makeSelectHistory = () => createSelector(
   [selectFoundUser],
   foundUserState => foundUserState.get('history')
 );
+
+export const makeFoundRepos = () => createSelector(
+  [selectFoundUser],
+  foundUserState => foundUserState.get('foundRepos')
+);
