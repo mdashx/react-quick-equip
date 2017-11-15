@@ -15,6 +15,14 @@ module.exports = {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
     }),
+    // https://webpack.js.org/plugins/commons-chunk-plugin/#passing-the-minchunks-property-a-function
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "vendor",
+      minChunks: function (module) {
+        // this assumes your vendor imports exist in the node_modules directory
+        return module.context && module.context.indexOf("node_modules") !== -1;
+      }
+    }),
   ],
   output: {
     filename: '[name].bundle.js',
