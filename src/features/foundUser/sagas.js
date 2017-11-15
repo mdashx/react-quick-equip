@@ -15,7 +15,6 @@ function* foundUserSaga() {
     yield put(updateUsernameRepos(username, response.data));
   } catch (err) {
     if (err.response) {
-      console.log(err.response);
       yield put(updateUsernameRepos(username, [{name: `Lookup failed: ${err.response.statusText}`}]));
     } else {
       console.log(err);

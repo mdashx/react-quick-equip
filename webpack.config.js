@@ -15,6 +15,7 @@ module.exports = {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
       },
     }),
+    new webpack.HashedModuleIdsPlugin(),
     // https://webpack.js.org/plugins/commons-chunk-plugin/#passing-the-minchunks-property-a-function
     new webpack.optimize.CommonsChunkPlugin({
       name: "vendor",
@@ -23,9 +24,14 @@ module.exports = {
         return module.context && module.context.indexOf("node_modules") !== -1;
       }
     }),
+    // https://webpack.js.org/guides/caching/#extracting-boilerplate
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'runtime'
+    }),
+
   ],
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name]-[chunkhash].js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
