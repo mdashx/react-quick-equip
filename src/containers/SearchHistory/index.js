@@ -3,31 +3,36 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import ShowUserList from 'components/ShowUserList';
-import { makeFoundRepos, makeSelectHistory } from 'features/foundUser/selectors';
+import ShowRepos from 'components/ShowRepos';
+import { makeSelectedRepos, makeSelectHistory } from 'features/foundUser/selectors';
+import { selectUser } from 'features/foundUser/actions';
 
 class SearchHistory extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <div>
         <ShowUserList
             title="Search History"
-            usernames={this.props.usernames}
-            clickHandler={this.props.lookupUsername}
+            usernames={this.props.history}
+            clickHandler={this.props.showRepos}
         />
+        <hr />
+        <ShowRepos repos={this.props.repos} />        
       </div>
     );
   }
 }
 
+
+
 const mapStateToProps = createStructuredSelector({
   history: makeSelectHistory(),
-  repos: makeFoundRepos(),
+  repos: makeSelectedRepos(),
 });
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createComment: (e) => { console.log(`Comment on user: ${e.target.getAttribute('data-username')}`)}
+    showRepos: (e) => dispatch(selectUser(e.target.getAttribute('data-username'))),
   }
 }
 

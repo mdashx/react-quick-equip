@@ -1,4 +1,4 @@
-import { LOOKUP_USERNAME, UPDATE_USERNAME_REPOS } from './constants';
+import { LOOKUP_USERNAME, UPDATE_USERNAME_REPOS, SELECT_USER } from './constants';
 
 export function lookupUsername(username) {
   return {
@@ -12,5 +12,12 @@ export function updateUsernameRepos(username, repos) {
     type: UPDATE_USERNAME_REPOS,
     username,
     repos
+  }
+}
+
+export function selectUser(username) {
+  return {
+    type: SELECT_USER,
+    username,
   }
 }

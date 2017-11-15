@@ -1,10 +1,8 @@
 import React from 'react';
 
 const ShowRepos = (props) => {
-  console.log('&&', props);
-  
   if (props.repos === undefined) {
-    return <span>No repos</span>;
+    return <span>No repos.</span>;
   }
 
   if (props.repos.length === 0) {

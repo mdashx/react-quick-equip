@@ -15,7 +15,6 @@ export const makeMostRecentUser = () => createSelector(
   foundUserState => foundUserState.getIn(['history', 0])
 );
 
-
 export const makeSelectHistory = () => createSelector(
   [selectFoundUser],
   foundUserState => foundUserState.get('history')
@@ -24,4 +23,14 @@ export const makeSelectHistory = () => createSelector(
 export const makeFoundRepos = () => createSelector(
   [selectFoundUser],
   foundUserState => foundUserState.get('foundRepos')
+);
+
+export const makeSelectedUser = () => createSelector(
+  [selectFoundUser],
+  foundUserState => foundUserState.get('selectedUser')
+)
+
+export const makeSelectedRepos = () => createSelector(
+  [makeFoundRepos(), makeSelectedUser()],
+  (repos, user) => repos.get(user)
 );

@@ -11,7 +11,6 @@ import { lookupUsername } from 'features/foundUser/actions';
 
 class LookupUsers extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <div>
         <ShowUserList
