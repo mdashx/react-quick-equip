@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -24,11 +25,7 @@ module.exports = {
         return module.context && module.context.indexOf("node_modules") !== -1;
       }
     }),
-    // https://webpack.js.org/guides/caching/#extracting-boilerplate
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'runtime'
-    }),
-
+    new UglifyJSPlugin(),
   ],
   output: {
     filename: '[name]-[chunkhash].js',
