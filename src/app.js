@@ -16,14 +16,18 @@ const sagaMiddleware = createSagaMiddleware();
 export const store = createStore(reducer, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(foundUserWatcher);
 
+
+
 const render = () => {
+  const app = document.createElement('div');
+  document.body.appendChild(app);
   ReactDOM.render(
     <Provider store={store}>
       <Router>
         <App />
       </Router>
     </Provider>,
-    document.getElementById('app')
+    app
   )
 }
 
