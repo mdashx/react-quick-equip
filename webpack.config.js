@@ -40,7 +40,8 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react']
+          plugins: ["syntax-dynamic-import"],
+          presets: ['env', 'react']
         }
       },
       {
@@ -50,7 +51,7 @@ module.exports = {
     ]},
   
   resolve: {
-    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    modules: [path.resolve(__dirname, 'src'), 'node_modules', path.resolve(__dirname, './')],
     extensions: ['.js', '.jsx', '.json'],
   }
 };

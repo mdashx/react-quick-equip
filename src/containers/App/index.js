@@ -1,12 +1,27 @@
 import React from 'react';
+import Loadable from 'react-loadable';
 import { Link, Route, Switch } from 'react-router-dom'
 
 import Home from 'containers/Home';
-import CreateList from 'containers/CreateList';
-import LookupUsers from 'containers/LookupUsers';
-import SearchHistory from 'containers/SearchHistory';
+import Loading from 'containers/Loading';
+
+const CreateList = Loadable({
+  loader: () => import('containers/CreateList'),
+  loading: Loading,
+});
+
+const LookupUsers = Loadable({
+  loader: () => import('containers/LookupUsers'),
+  loading: Loading,
+});
+
+const SearchHistory = Loadable({
+  loader: () => import('containers/SearchHistory'),
+  loading: Loading,
+});
 
 const App = (props) => {
+  console.log('routes...');
   return (
     <div>
       <div id="header">
