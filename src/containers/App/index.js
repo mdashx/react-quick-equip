@@ -2,8 +2,13 @@ import React from 'react';
 import Loadable from 'react-loadable';
 import { Link, Route, Switch } from 'react-router-dom'
 
-import Home from 'containers/Home';
 import Loading from 'containers/Loading';
+
+const Home = Loadable({
+  loader: () => import('containers/Home'),
+  loading: Loading,
+});
+
 
 const CreateList = Loadable({
   loader: () => import('containers/CreateList'),

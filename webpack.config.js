@@ -7,6 +7,7 @@ module.exports = {
   entry: {
     index: './src/app.js',
   },
+  devtool: 'inline-source-map',
   plugins: [
     new HtmlWebpackPlugin({
       title: 'React Quick Equip',
@@ -25,7 +26,7 @@ module.exports = {
         return module.context && module.context.indexOf("node_modules") !== -1;
       }
     }),
-    new UglifyJSPlugin(),
+    new UglifyJSPlugin({ sourceMap: true }),
   ],
   output: {
     filename: '[name]-[chunkhash].js',
