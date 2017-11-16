@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import Loading from 'containers/Loading';
+import { CreateList } from 'containers/CreateList';
 
 test('Renders...', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Loading />, div);
+  ReactDOM.render(<CreateList />, div);
 });
 
 test('Renders correctly', () => {
-  const component = renderer.create(<Loading />);
+  const component = renderer.create(<CreateList />);
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
-

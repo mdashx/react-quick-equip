@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly 1`] = `
+<div>
+  <h1>
+    What Github user's do you want to lookup?
+  </h1>
+  <form>
+    <input
+      onChange={undefined}
+      value={undefined}
+    />
+    <span>
+       
+    </span>
+    <input
+      data-username={undefined}
+      onClick={undefined}
+      type="submit"
+      value="Add User"
+    />
+  </form>
+  <p>
+    Click a username to delete it from the list.
+  </p>
+  <ul>
+    <span />
+  </ul>
+</div>
+`;

@@ -6,7 +6,7 @@ import UserList from 'components/UserList';
 import { addUser, updateUsername } from 'features/findUser/actions';
 import { makeSelectUsernames, makeSelectCurrentUsername } from 'features/findUser/selectors';
 
-class CreateList extends React.Component {
+export class CreateList extends React.Component {
   render() {
     return (
       <div>
@@ -14,7 +14,12 @@ class CreateList extends React.Component {
         <form>
           <input value={this.props.currentUsername} onChange={this.props.updateUsername} />
           <span>&nbsp;</span>
-          <input type="submit" value="Add User" onClick={this.props.addUser} />
+          <input
+              type="submit"
+              value="Add User"
+              onClick={this.props.addUser}
+              data-username={this.props.currentUsername}
+          />
         </form>
         <p>Click a username to delete it from the list.</p>
         <ul>
@@ -33,7 +38,7 @@ const mapStateToProps = createStructuredSelector({
 const mapDispatchToProps = (dispatch) => {
   return {
     updateUsername: (e) => dispatch(updateUsername(e.target.value)),
-    addUser: (e) => {e.preventDefault(); dispatch(addUser())},
+    addUser: (e) => {e.preventDefault(); dispatch(addUser(e.target.getAttribute('data-username')))},
     removeUser:(e) => { console.log(`Remove user: ${e.target.getAttribute('data-username')}`)}
   }
 };

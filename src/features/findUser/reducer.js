@@ -3,7 +3,7 @@ import { fromJS } from 'immutable';
 import { ADD_USER_TO_LIST, UPDATE_USERNAME } from './constants';
 import { LOOKUP_FAILED, LOOKUP_USERNAME } from 'features/foundUser/constants';
 
-const initialState = fromJS({
+export const initialState = fromJS({
   currentUsername: '',
   usernames: [],
 });
@@ -14,7 +14,7 @@ const findUser = (state = initialState, action) => {
       return state.set('currentUsername', action.username);
     case ADD_USER_TO_LIST:
       return state.withMutations(map => {
-        map.updateIn(['usernames'], list => list.push(state.get('currentUsername')));
+        map.updateIn(['usernames'], list => list.push(action.username));
         map.set('currentUsername', '');
       });
     case LOOKUP_USERNAME:

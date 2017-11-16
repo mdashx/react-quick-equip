@@ -3,9 +3,10 @@ import {
   UPDATE_USERNAME,
 } from './constants';
 
-export function addUser() {
+export function addUser(username) {
   return {
     type: ADD_USER_TO_LIST,
+    username,
   }
 }
 
