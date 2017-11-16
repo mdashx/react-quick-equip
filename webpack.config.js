@@ -37,10 +37,6 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        query: {
-          plugins: ["syntax-dynamic-import"],
-          presets: ['env', 'react']
-        }
       },
       {
         test: /\.html$/,
