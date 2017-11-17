@@ -1,3 +1,9 @@
+/* 
+ *
+ * Search History container (Redux connected component)
+ *
+ */
+
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -7,7 +13,7 @@ import ShowRepos from 'components/ShowRepos';
 import { makeSelectedRepos, makeSelectHistory } from 'features/foundUser/selectors';
 import { selectUser } from 'features/foundUser/actions';
 
-class SearchHistory extends React.Component {
+export class SearchHistory extends React.Component {
   render() {
     return (
       <div>

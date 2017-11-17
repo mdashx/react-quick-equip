@@ -10,5 +10,5 @@ describe('findUser reducer', () => {
     const state = reducer(initialState, { type: constants.ADD_USER_TO_LIST, username: 'tom' });
     const usernames = state.toJS().usernames;
     expect(usernames).toEqual(['tom']);
-  })
+  });
 });

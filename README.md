@@ -28,3 +28,21 @@ containers and components remain separate from the Redux features.
 
 There are no plans to inject reducers and sagas dynamically... if that
 happens at all, it will not be the default behavior.
+
+## Boilerplate Generation
+
+### Container Boilerplate
+`npm new container` creates a new directory named after the component,
+with an `index.js` and `index.test.js` file. 
+
+The `index.js` file contains a React component that is connected to
+the Redux store. The component boilerplate uses the
+`class... extends...` syntax and includes placeholder code for
+`mapStateToProps`, `mapDispatchToProps`, and the related `import`
+statements. The boilerplate code exports both the component class (for
+testing) and the connected component (what we actually use in the
+app). 
+
+The `index.test.js` file creates two basic unit tests, one test just
+makes sure that the component renders, and the other tests creates a
+snapshot test of the component using `react-test-renderer`.
