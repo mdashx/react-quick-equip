@@ -8,8 +8,9 @@ import { call, put, select, takeLatest } from 'redux-saga/effects';
 
 import { DEFAULT_ACTION } from './actions';
 
-function* defaultSaga() {
+export function* defaultSaga() {
   // Do something when action is dispatched.
+  yield call((msg) => console.log(msg), 'test me');
 }
 
 export function* {{ camelCase name }}Watcher() {

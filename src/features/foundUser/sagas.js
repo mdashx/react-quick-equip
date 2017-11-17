@@ -8,7 +8,7 @@ import { makeMostRecentUser } from './selectors';
 
 import { store } from 'app';
 
-function* fetchUserSaga() {
+export function* fetchUserSaga() {
   const username = yield select(makeMostRecentUser());
   try {
     const response = yield call(fetchGithubUser, username);

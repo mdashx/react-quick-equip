@@ -36,10 +36,20 @@ module.exports = {
       path: '../../src/features/{{lowerCase name}}/selectors.js',
       templateFile: './feature/selectors.hbs.js',
     },
-        {
+    {
       type: 'add',
       path: '../../src/features/{{lowerCase name}}/selectors.test.js',
       templateFile: './feature/selectors-test.hbs.js',
+    },
+    {
+      type: 'add',
+      path: '../../src/features/{{lowerCase name}}/sagas.js',
+      templateFile: './feature/sagas.hbs.js',
+    },
+    {
+      type: 'add',
+      path: '../../src/features/{{lowerCase name}}/sagas.test.js',
+      templateFile: './feature/sagas-test.hbs.js',
     }
   ]
 }
