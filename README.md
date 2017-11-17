@@ -32,7 +32,7 @@ happens at all, it will not be the default behavior.
 ## Boilerplate Generation
 
 ### Container Boilerplate
-`npm new container` creates a new directory named after the component,
+`npm run new container` creates a new directory named after the component,
 with an `index.js` and `index.test.js` file. 
 
 The `index.js` file contains a React component that is connected to
@@ -46,3 +46,9 @@ app).
 The `index.test.js` file creates two basic unit tests, one test just
 makes sure that the component renders, and the other tests creates a
 snapshot test of the component using `react-test-renderer`.
+
+### Feature Boilerplate
+`npm run new feature` creates a new directory named after the feature,
+with files for the constants, actions, reducer, selectors and sagas, and
+basic unit tests for each. The features come with a values named
+"default" which should be replaced.

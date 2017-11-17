@@ -34,7 +34,8 @@ export class SearchHistory extends React.Component {
 const mapStateToProps = createStructuredSelector({
   history: makeSelectHistory(),
   repos: makeSelectedRepos(),
-});
+}); 
+
 
 const mapDispatchToProps = (dispatch) => {
   return {

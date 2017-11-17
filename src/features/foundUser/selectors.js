@@ -1,11 +1,11 @@
 import { createSelector } from 'reselect';
 
 export const selectFoundUser = state => state.foundUser;
-
+  
 export const makeMostRecentRepos = () => createSelector(
   [selectFoundUser],
-  foundUserState => {
-    const user = foundUserState.getIn(['history', 0])
+  (foundUserState) => {
+    const user = foundUserState.getIn(['history', 0]);
     return foundUserState.getIn(['foundRepos', user])
   }
 );

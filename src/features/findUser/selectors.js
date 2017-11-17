@@ -3,12 +3,12 @@ import { createSelector } from 'reselect';
 export const selectFindUser = (state) => state.findUser;
 
 export const makeSelectUsernames = () => createSelector(
-  [selectFindUser],
+  [state => selectFindUser(state)],
   findUserState => findUserState.get('usernames')
 ); 
 
 export const makeSelectCurrentUsername = () => createSelector(
-  [selectFindUser],
+  [state => selectFindUser(state)],
   findUserState => findUserState.get('currentUsername')
 );
 
