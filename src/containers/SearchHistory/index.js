@@ -10,7 +10,10 @@ import { createStructuredSelector } from 'reselect';
 
 import ShowUserList from 'components/ShowUserList';
 import ShowRepos from 'components/ShowRepos';
-import { makeSelectedRepos, makeSelectHistory } from 'features/foundUser/selectors';
+import {
+  makeSelectedRepos,
+  makeSelectHistory,
+} from 'features/foundUser/selectors';
 import { selectUser } from 'features/foundUser/actions';
 
 export class SearchHistory extends React.Component {
@@ -18,29 +21,27 @@ export class SearchHistory extends React.Component {
     return (
       <div>
         <ShowUserList
-            title="Search History"
-            usernames={this.props.history}
-            clickHandler={this.props.showRepos}
+          title="Search History"
+          usernames={this.props.history}
+          clickHandler={this.props.showRepos}
         />
         <hr />
-        <ShowRepos repos={this.props.repos} />        
+        <ShowRepos repos={this.props.repos} />
       </div>
     );
   }
 }
 
-
-
 const mapStateToProps = createStructuredSelector({
   history: makeSelectHistory(),
   repos: makeSelectedRepos(),
-}); 
+});
 
-
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    showRepos: (e) => dispatch(selectUser(e.target.getAttribute('data-username'))),
-  }
-}
+    showRepos: e =>
+      dispatch(selectUser(e.target.getAttribute('data-username'))),
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchHistory);

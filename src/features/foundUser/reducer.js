@@ -1,6 +1,10 @@
 import { fromJS } from 'immutable';
 
-import { LOOKUP_USERNAME, UPDATE_USERNAME_REPOS, SELECT_USER } from './constants';
+import {
+  LOOKUP_USERNAME,
+  UPDATE_USERNAME_REPOS,
+  SELECT_USER,
+} from './constants';
 
 const initialState = fromJS({
   history: [],
@@ -15,10 +19,12 @@ const foundUser = (state = initialState, action) => {
     case SELECT_USER:
       return state.set('selectedUser', action.username);
     case UPDATE_USERNAME_REPOS:
-      return state.updateIn(['foundRepos'], map => map.set(action.username, action.repos));
+      return state.updateIn(['foundRepos'], map =>
+        map.set(action.username, action.repos)
+      );
     default:
       return state;
   }
-}
+};
 
 export default foundUser;

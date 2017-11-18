@@ -7,7 +7,7 @@
 import * as sagas from './sagas';
 import { UPDATE_USERNAME_REPOS } from './constants';
 
-const mockRequestOne = (username) => {
+const mockRequestOne = username => {
   return Promise.resolve({ data: 'our data' });
 };
 

@@ -30,6 +30,7 @@
     "immutable": "^3.8.2",
     "jest": "^21.2.1",
     "plop": "^1.9.0",
+    "prettier": "1.8.2",
     "react-loadable": "^5.3.1",
     "react-test-renderer": "^16.1.1",
     "redux-saga": "^0.16.0",
@@ -39,6 +40,7 @@
   "scripts": {
     "babel": "babel --presets es2015 js/main.js -o build/main.bundle.js",
     "build": "webpack",
+    "format": "prettier --single-quote --trailing-comma=es5 --write \"{*.js,./src/**/*.js}\"",
     "new": "plop --plopfile config/generators/index.js",
     "start": "webpack-dev-server --host 0.0.0.0 --history-api-fallback",
     "stats": "webpack --profile --json > stats.json",

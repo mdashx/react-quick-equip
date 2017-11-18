@@ -18,10 +18,12 @@ const findUser = (state = initialState, action) => {
         map.set('currentUsername', '');
       });
     case LOOKUP_USERNAME:
-      return state.updateIn(['usernames'], list => list.filter(username => username !== action.username));
+      return state.updateIn(['usernames'], list =>
+        list.filter(username => username !== action.username)
+      );
     default:
       return state;
   }
-}
+};
 
 export default findUser;

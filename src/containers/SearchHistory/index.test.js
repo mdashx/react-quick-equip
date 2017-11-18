@@ -19,4 +19,3 @@ test('Renders correctly', () => {
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
-

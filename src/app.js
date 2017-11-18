@@ -26,7 +26,7 @@ const render = () => {
       </Router>
     </Provider>,
     app
-  )
-}
+  );
+};
 
 render();

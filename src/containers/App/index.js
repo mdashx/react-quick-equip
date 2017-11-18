@@ -1,6 +1,6 @@
 import React from 'react';
 import Loadable from 'react-loadable';
-import { Link, Route, Switch } from 'react-router-dom'
+import { Link, Route, Switch } from 'react-router-dom';
 
 import Loading from 'containers/Loading';
 
@@ -8,7 +8,6 @@ const Home = Loadable({
   loader: () => import('containers/Home'),
   loading: Loading,
 });
-
 
 const CreateList = Loadable({
   loader: () => import('containers/CreateList'),
@@ -25,7 +24,7 @@ const SearchHistory = Loadable({
   loading: Loading,
 });
 
-const App = (props) => {
+const App = props => {
   console.log('routes...');
   return (
     <div>
@@ -48,6 +47,6 @@ const App = (props) => {
       </Switch>
     </div>
   );
-}
+};
 
 export default App;

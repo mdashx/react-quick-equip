@@ -2,7 +2,7 @@ import React from 'react';
 
 import UserList from 'components/UserList';
 
-const ShowUserList = (props) => (
+const ShowUserList = props => (
   <div>
     <h1>{props.title}</h1>
     <br />
@@ -11,5 +11,5 @@ const ShowUserList = (props) => (
     </ul>
   </div>
 );
-  
+
 export default ShowUserList;

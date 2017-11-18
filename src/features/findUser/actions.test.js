@@ -1,4 +1,4 @@
-import *  as actions from './actions';
+import * as actions from './actions';
 import * as constants from './constants';
 
 describe('actions', () => {
@@ -14,7 +14,7 @@ describe('actions', () => {
         username,
       };
       expect(actions.updateUsername(username)).toEqual(expectedAction);
-    });  
+    });
   });
 
   test('should add user to the list', () => {
@@ -25,5 +25,4 @@ describe('actions', () => {
     };
     expect(actions.addUser(username)).toEqual(expectedAction);
   });
- 
 });

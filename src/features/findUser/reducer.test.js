@@ -7,7 +7,10 @@ describe('findUser reducer', () => {
   });
 
   test('Should add user to list', () => {
-    const state = reducer(initialState, { type: constants.ADD_USER_TO_LIST, username: 'tom' });
+    const state = reducer(initialState, {
+      type: constants.ADD_USER_TO_LIST,
+      username: 'tom',
+    });
     const usernames = state.toJS().usernames;
     expect(usernames).toEqual(['tom']);
   });

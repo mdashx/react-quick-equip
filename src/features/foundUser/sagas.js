@@ -15,9 +15,15 @@ export function* fetchUserSaga(apiRequest) {
     yield put(updateUsernameRepos(username, response.data));
   } catch (err) {
     if (err.response) {
-      yield put(updateUsernameRepos(username, [{name: `Lookup failed: ${err.response.statusText}`}]));
+      yield put(
+        updateUsernameRepos(username, [
+          { name: `Lookup failed: ${err.response.statusText}` },
+        ])
+      );
     } else {
-      yield put(updateUsernameRepos(username, [{name: `Lookup failed: ${err}`}]));
+      yield put(
+        updateUsernameRepos(username, [{ name: `Lookup failed: ${err}` }])
+      );
     }
   }
 }
