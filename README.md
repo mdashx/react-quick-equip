@@ -21,6 +21,22 @@ not be changed. Without an immutable library, we'd need to use
 handles making these copies in a more performant way then we would do
 naively with just `Object.assign()`.
 
+### Saga Testing
+
+To keep things simple and somewhat useful, we just test that the final
+effect yielded by the saga matches what we expect the final effect to
+be. We can look at what type of effect (call, put, select, etc.) is
+yielded, or look at the argument to the effect (the action, the type
+field of the action, the function that is called, etc.), or we can
+stringify the entire effect and compare to a known correct value. The
+appropriate test value depends on the complexity of the saga.
+
+The goal is to just have a really simple test to make sure the saga
+runs. By nature, the sagas are all about creating side effects which
+means testing them fully involves setting up a complete mock
+environment and it's just not worth the effort. If it becomes worth
+the effort, then we'll look into it more.
+
 ## Differences from react-boilerplate
 
 This starter kit uses a feature oriented directory structure, but the

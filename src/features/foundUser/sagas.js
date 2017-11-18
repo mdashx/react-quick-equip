@@ -8,20 +8,20 @@ import { makeMostRecentUser } from './selectors';
 
 import { store } from 'app';
 
-export function* fetchUserSaga() {
+export function* fetchUserSaga(apiRequest) {
   const username = yield select(makeMostRecentUser());
   try {
-    const response = yield call(fetchGithubUser, username);
+    const response = yield call(apiRequest, username);
     yield put(updateUsernameRepos(username, response.data));
   } catch (err) {
     if (err.response) {
       yield put(updateUsernameRepos(username, [{name: `Lookup failed: ${err.response.statusText}`}]));
     } else {
-      console.log(err);
+      yield put(updateUsernameRepos(username, [{name: `Lookup failed: ${err}`}]));
     }
   }
 }
 
 export function* foundUserWatcher() {
-  yield takeLatest(LOOKUP_USERNAME, fetchUserSaga);
+  yield takeLatest(LOOKUP_USERNAME, fetchUserSaga, fetchGithubUser);
 }

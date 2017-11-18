@@ -2,7 +2,7 @@ import { fromJS } from 'immutable';
 import * as selectors from './selectors';
 
 describe('selectors', () => {
-  describe('select Found User', () => {
+  describe('select {{ camelCase name }}', () => {
     test('should select substate from the main state', () => {
       const state = { {{ camelCase name }}: ''};
       const expected = '';
