@@ -19,7 +19,7 @@ module.exports = options => ({
     index: path.resolve(__dirname, '../src/app.js'),
   },
   devtool: options.devtool,
-  plugins: commonPlugins.concat(options.plugins),
+  plugins: options.plugins.concat(commonPlugins),
   output: {
     filename: '[name]-[chunkhash].js',
     path: path.resolve(__dirname, '../dist'),
@@ -68,6 +68,7 @@ module.exports = options => ({
       path.resolve(__dirname, '../src'),
       path.resolve(__dirname, '../node_modules'),
       path.resolve(__dirname, './'),
+      path.resolve(__dirname, './dll'),
     ],
     extensions: ['.js', '.jsx', '.json'],
   },

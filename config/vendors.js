@@ -11,16 +11,16 @@
  *
  */
 
-import 'react';
-import 'react-dom';
-import 'react-redux';
-import 'react-router-dom';
-import 'react-router-redux';
-import 'redux';
-import 'reselect';
-import 'axios';
-import 'core-js';
-import 'react-loadable';
-import 'react-test-renderer';
-import 'redux-saga';
-import 'immutable';
+require('react');
+require('react-dom');
+require('react-redux');
+require('react-router-dom');
+require('react-router-redux');
+require('redux');
+require('reselect');
+require('axios');
+require('core-js');
+require('react-loadable');
+require('react-test-renderer');
+require('redux-saga');
+require('immutable');

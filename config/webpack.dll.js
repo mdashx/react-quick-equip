@@ -3,17 +3,18 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-    vendor: [path.join(__dirname, 'vendors.js')],
+    vendorDLL: [path.join(__dirname, 'vendors.js')],
   },
+  devtool: '#source-map',
   output: {
     path: path.join(__dirname, 'dll'),
     filename: 'dll.[name].js',
-    library: '[name]',
+    library: 'vendorDLL',
   },
   plugins: [
     new webpack.DllPlugin({
       path: path.join(__dirname, 'dll', '[name]-manifest.json'),
-      name: '[name]',
+      name: 'vendorDLL',
     }),
   ],
   resolve: {
