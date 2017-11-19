@@ -3,7 +3,9 @@
 exports[`Renders correctly 1`] = `
 <div>
   <div>
-    <h1>
+    <h1
+      className="myHeading"
+    >
       Search History
     </h1>
     <br />

@@ -2,7 +2,9 @@
 
 exports[`Renders correctly 1`] = `
 <div>
-  <h1>
+  <h1
+    className="myHeading"
+  >
     What Github user's do you want to lookup?
   </h1>
   <form>
