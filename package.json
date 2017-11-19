@@ -43,11 +43,15 @@
   "scripts": {
     "babel": "babel --presets es2015 js/main.js -o build/main.bundle.js",
     "build": "NODE_ENV=production webpack --config config/webpack.production.js",
-    "format": "prettier --single-quote --trailing-comma=es5 --write \"{*.js,./src/**/*.js}\"",
+    "build-dev": "NODE_ENV=dev webpack --config config/webpack.dev.js",
+    "dll": "webpack --config config/webpack.dll.js",
+    "format": "prettier --single-quote --trailing-comma=es5 --write \"{*.js,./src/**/*.js,./config/vendor.js}\"",
     "new": "plop --plopfile config/generators/index.js",
     "start": "webpack-dev-server --config config/webpack.dev.js --host 0.0.0.0 --history-api-fallback",
     "stats": "webpack --profile --json > stats.json",
+    "stats-dev": "webpack --profile --json --config config/webpack.dev.js > stats.json",
     "test": "jest"
+    
   },
   "repository": {
     "type": "git",

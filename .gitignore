@@ -1,6 +1,7 @@
 stats.json
 node_modules/
 dist/
+dll/
 commit.txt
 .env
 tmp*

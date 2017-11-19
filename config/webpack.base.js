@@ -14,9 +14,9 @@ const commonPlugins = [
   }),
 ];
 
-module.exports = (options) => ({
+module.exports = options => ({
   entry: {
-    index: path.resolve(__dirname, '../src/app.js')
+    index: path.resolve(__dirname, '../src/app.js'),
   },
   devtool: options.devtool,
   plugins: commonPlugins.concat(options.plugins),
@@ -28,6 +28,7 @@ module.exports = (options) => ({
     loaders: [
       {
         test: /\.js$/,
+        exclude: [path.resolve(__dirname, '../node_modules')],
         loader: 'babel-loader',
       },
       {
@@ -65,7 +66,7 @@ module.exports = (options) => ({
   resolve: {
     modules: [
       path.resolve(__dirname, '../src'),
-      '../node_modules',
+      path.resolve(__dirname, '../node_modules'),
       path.resolve(__dirname, './'),
     ],
     extensions: ['.js', '.jsx', '.json'],
