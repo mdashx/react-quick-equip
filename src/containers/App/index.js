@@ -45,7 +45,7 @@ const App = props => {
           <Route path="/lookup" component={LookupUsers} />
           <Route path="/history" component={SearchHistory} />
         </Switch>
-      </div> 
+      </div>
     </div>
   );
 };
