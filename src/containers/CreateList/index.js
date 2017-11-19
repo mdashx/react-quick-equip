@@ -9,11 +9,15 @@ import {
   makeSelectCurrentUsername,
 } from 'features/findUser/selectors';
 
+import style from './style.css';
+
 export class CreateList extends React.Component {
   render() {
     return (
       <div>
-        <h1>What Github user's do you want to lookup?</h1>
+        <h1 className={style.myHeading}>
+          What Github user's do you want to lookup?
+        </h1>
         <form>
           <input
             value={this.props.currentUsername}

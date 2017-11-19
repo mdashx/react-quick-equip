@@ -1,0 +1,4 @@
+.myHeading {
+    composes: headerFont from "styles/typography.css";
+    composes: secondary from "styles/colors.css";
+}

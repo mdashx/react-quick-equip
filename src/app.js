@@ -16,6 +16,9 @@ const sagaMiddleware = createSagaMiddleware();
 export const store = createStore(reducer, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(foundUserWatcher);
 
+import 'sanitize.css';
+import 'styles/global.css';
+
 const render = () => {
   const app = document.createElement('div');
   document.body.appendChild(app);

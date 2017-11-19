@@ -1,0 +1,19 @@
+body {
+    background: #e8e8e8;
+    font-family: 'serif';
+}
+
+#navbar {
+    padding: 15px;
+    background: #5050c7;
+    color: white;
+}
+
+#navbar > a {
+    color: white;
+}
+
+#content {
+    padding: 15px;
+}
+

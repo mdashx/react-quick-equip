@@ -27,7 +27,7 @@ module.exports = {
         return module.context && module.context.indexOf('node_modules') !== -1;
       },
     }),
-    new UglifyJSPlugin({ sourceMap: true }),
+    new UglifyJSPlugin({ sourceMap: false }),
   ],
   output: {
     filename: '[name]-[chunkhash].js',
@@ -42,6 +42,31 @@ module.exports = {
       {
         test: /\.html$/,
         loader: 'html-loader',
+      },
+      {
+        include: [path.resolve(__dirname, 'src/styles/global.css')],
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: false,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.css$/,
+        exclude: [path.resolve(__dirname, 'src/styles/global.css')],
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+        ],
       },
     ],
   },

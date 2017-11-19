@@ -25,10 +25,9 @@ const SearchHistory = Loadable({
 });
 
 const App = props => {
-  console.log('routes...');
   return (
     <div>
-      <div id="header">
+      <div>
         <div id="navbar">
           <Link to="/">Home</Link>
           <span> -- </span>
@@ -39,12 +38,14 @@ const App = props => {
           <Link to="/history">View Search History</Link>
         </div>
       </div>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/create" component={CreateList} />
-        <Route path="/lookup" component={LookupUsers} />
-        <Route path="/history" component={SearchHistory} />
-      </Switch>
+      <div id="content">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/create" component={CreateList} />
+          <Route path="/lookup" component={LookupUsers} />
+          <Route path="/history" component={SearchHistory} />
+        </Switch>
+      </div> 
     </div>
   );
 };

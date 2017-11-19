@@ -16,6 +16,8 @@ import {
 } from 'features/foundUser/selectors';
 import { selectUser } from 'features/foundUser/actions';
 
+import style from './style.css';
+
 export class SearchHistory extends React.Component {
   render() {
     return (
@@ -24,6 +26,7 @@ export class SearchHistory extends React.Component {
           title="Search History"
           usernames={this.props.history}
           clickHandler={this.props.showRepos}
+          headerClass={style.myHeading}
         />
         <hr />
         <ShowRepos repos={this.props.repos} />

@@ -68,3 +68,12 @@ snapshot test of the component using `react-test-renderer`.
 with files for the constants, actions, reducer, selectors and sagas, and
 basic unit tests for each. The features come with a values named
 "default" which should be replaced.
+
+### Theming
+Instead of doing something similar to the CSS Modules example:
+https://github.com/css-modules/css-modules/blob/master/docs/theming.md
+we just handle theming by overwriting the shared CSS files before
+building.
+
+This means that components are not aware of themes and there's no
+ability for a user to change themes.

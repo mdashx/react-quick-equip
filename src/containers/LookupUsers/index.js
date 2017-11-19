@@ -11,6 +11,8 @@ import {
 } from 'features/foundUser/selectors';
 import { lookupUsername } from 'features/foundUser/actions';
 
+import style from './style.css';
+
 class LookupUsers extends React.Component {
   render() {
     return (
@@ -19,6 +21,7 @@ class LookupUsers extends React.Component {
           title="Lookup Users"
           usernames={this.props.usernames}
           clickHandler={this.props.lookupUsername}
+          headerClass={style.myHeading}
         />
         <hr />
         <ShowRepos repos={this.props.mostRecentRepos} />
