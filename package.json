@@ -45,7 +45,7 @@
     "build": "NODE_ENV=production webpack --config config/webpack.production.js",
     "format": "prettier --single-quote --trailing-comma=es5 --write \"{*.js,./src/**/*.js}\"",
     "new": "plop --plopfile config/generators/index.js",
-    "start": "webpack-dev-server --config config/webpack.production.js --host 0.0.0.0 --history-api-fallback",
+    "start": "webpack-dev-server --config config/webpack.dev.js --host 0.0.0.0 --history-api-fallback",
     "stats": "webpack --profile --json > stats.json",
     "test": "jest"
   },
