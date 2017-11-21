@@ -1,7 +1,7 @@
 import { fromJS } from 'immutable';
 
 import { ADD_USER_TO_LIST, UPDATE_USERNAME } from './constants';
-import { LOOKUP_FAILED, LOOKUP_USERNAME } from 'features/foundUser/constants';
+import { LOOKUP_USERNAME } from 'features/foundUser/constants';
 
 export const initialState = fromJS({
   currentUsername: '',

@@ -17,3 +17,12 @@ body {
     padding: 15px;
 }
 
+/* https://css-tricks.com/dont-overthink-flexbox-grids/ */
+
+.flex-grid {
+  display: flex;
+}
+
+.col {
+  flex: 1;
+}

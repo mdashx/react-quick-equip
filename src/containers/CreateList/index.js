@@ -20,22 +20,22 @@ export class CreateList extends React.Component {
         </h1>
         <form>
           <input
-            value={this.props.currentUsername}
-            onChange={this.props.updateUsername}
+              value={this.props.currentUsername}
+              onChange={this.props.updateUsername}
           />
           <span>&nbsp;</span>
           <input
-            type="submit"
-            value="Add User"
-            onClick={this.props.addUser}
-            data-username={this.props.currentUsername}
+              type="submit"
+              value="Add User"
+              onClick={this.props.addUser}
+              data-username={this.props.currentUsername}
           />
         </form>
         <p>Click a username to delete it from the list.</p>
         <ul>
           <UserList
-            usernames={this.props.usernames}
-            clickHandler={this.props.removeUser}
+              usernames={this.props.usernames}
+              clickHandler={this.props.removeUser}
           />
         </ul>
       </div>

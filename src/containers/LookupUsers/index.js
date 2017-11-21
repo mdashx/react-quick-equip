@@ -17,14 +17,19 @@ class LookupUsers extends React.Component {
   render() {
     return (
       <div>
+        <div className="flex-grid">
+          <div className="col">
         <ShowUserList
-          title="Lookup Users"
-          usernames={this.props.usernames}
-          clickHandler={this.props.lookupUsername}
-          headerClass={style.myHeading}
+            title="Lookup Users"
+            usernames={this.props.usernames}
+            clickHandler={this.props.lookupUsername}
+            headerClass={style.myHeading}
         />
-        <hr />
-        <ShowRepos repos={this.props.mostRecentRepos} />
+          </div>
+          <div className="col">
+            <ShowRepos repos={this.props.mostRecentRepos} />
+          </div>
+        </div>
       </div>
     );
   }
