@@ -1,0 +1,18 @@
+{
+    "presets": [
+        "env",
+        "react",
+        "flow"
+    ],
+    "plugins": [
+        "syntax-dynamic-import"
+    ],
+    "env": {
+        "test": {
+            "plugins": [
+                "dynamic-import-node",
+                "transform-es2015-modules-commonjs"
+            ]
+        }
+    }
+}
