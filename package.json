@@ -1,7 +1,8 @@
 {
   "name": "react-quick-equip",
   "version": "0.0.1",
-  "description": "Yet another ReactJS starter kit. Built for my specific use cases.",
+  "description":
+    "Yet another ReactJS starter kit. Built for my specific use cases.",
   "main": "webpack.config.js",
   "dependencies": {
     "babel-preset-react": "^6.24.1",
@@ -48,15 +49,19 @@
   },
   "scripts": {
     "babel": "babel --presets es2015 js/main.js -o build/main.bundle.js",
-    "build": "NODE_ENV=production webpack --config config/webpack.production.js",
+    "build":
+      "NODE_ENV=production webpack --config config/webpack.production.js",
+    "build:dll": "webpack --config config/webpack.dll.js",
     "build:dev": "NODE_ENV=dev webpack --config config/webpack.dev.js",
-    "dll": "webpack --config config/webpack.dll.js",
     "flow": "flow status",
-    "format": "prettier --single-quote --trailing-comma=es5 --write \"{*.js,./src/**/*.js,./config/vendor.js}\"",
+    "format":
+      "prettier --single-quote --trailing-comma=es5 --write \"{*.js,./src/**/*.js,./config/vendor.js}\"",
     "new": "plop --plopfile config/generators/index.js",
-    "start": "webpack-dev-server --config config/webpack.dev.js --host 0.0.0.0 --history-api-fallback",
+    "start":
+      "webpack-dev-server --config config/webpack.dev.js --host 0.0.0.0 --history-api-fallback",
     "stats": "webpack --profile --json > stats.json",
-    "stats:dev": "webpack --profile --json --config config/webpack.dev.js > stats.json",
+    "stats:dev":
+      "webpack --profile --json --config config/webpack.dev.js > stats.json",
     "test": "jest"
   },
   "repository": {
@@ -70,16 +75,11 @@
   },
   "homepage": "https://github.com/mdashx/react-quick-equip#readme",
   "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ],
-    "moduleDirectories": [
-      "src",
-      "node_modules"
-    ],
+    "moduleFileExtensions": ["js", "jsx"],
+    "moduleDirectories": ["src", "node_modules"],
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "./__mocks__/fileMock.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+        "./__mocks__/fileMock.js",
       "\\.css$": "identity-obj-proxy"
     }
   }

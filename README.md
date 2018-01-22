@@ -1,6 +1,10 @@
 # react-quick-equip
-Yet another ReactJS starter kit. Built for my specific use cases,
-based on many hours of experience building with react-boilerplate.
+Yet another ReactJS starter kit.
+
+## Getting Started
+
+Before using `npm run start` to run a dev server, you need to run `npm
+run build:dll` to make the DLLs available.
 
 ## Coding Conventions
 
