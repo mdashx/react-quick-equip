@@ -19,12 +19,12 @@ class LookupUsers extends React.Component {
       <div>
         <div className="flex-grid">
           <div className="col">
-        <ShowUserList
-            title="Lookup Users"
-            usernames={this.props.usernames}
-            clickHandler={this.props.lookupUsername}
-            headerClass={style.myHeading}
-        />
+            <ShowUserList
+              title="Lookup Users"
+              usernames={this.props.usernames}
+              clickHandler={this.props.lookupUsername}
+              headerClass={style.myHeading}
+            />
           </div>
           <div className="col">
             <ShowRepos repos={this.props.mostRecentRepos} />
