@@ -6,7 +6,7 @@
 
 import { call, put, select, takeLatest } from 'redux-saga/effects';
 
-import { DEFAULT_ACTION } from './actions';
+import { DEFAULT_ACTION } from './constants';
 
 export function* defaultSaga() {
   // Do something when action is dispatched.
