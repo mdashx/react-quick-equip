@@ -23,6 +23,7 @@ module.exports = options => ({
   output: {
     filename: '[name]-[chunkhash].js',
     path: path.resolve(__dirname, '../dist'),
+    publicPath: '/',
   },
   module: {
     loaders: [
